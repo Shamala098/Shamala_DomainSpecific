@@ -6,56 +6,66 @@
     <title>Document</title>
     <style>
         .left-bar{
-            position : fixed;
+            position: fixed;
             top: 20px;
-            left : 20px;
+            left: 20px;
         }
         .right-bar{
             position: fixed;
             top: 20px;
             right: 20px;
         }
-
         .search-section{
             text-align: center;
-            margin-top: 40px;
+            margin-top: 100px;
         }
-        .logo{
-            color :rgb(0, 4, 255);
-        }
-        .lens{
-            position: relative;
-            left : 35px;
-        }
-        .search-box{
-            padding: 15px 14px 15px 45px;
-            border-radius: 20px;
-            width: 50%;
-            border-color: aqua;
-        }
-        #suggestion-box{
-            width : 45%;
-            margin-left: 29%;
-        }
+        
+            .logo-first{
+                color : blue;
+            }
+            .tagline{
+                color: palevioletred;
+            }
+            .lens{
+                position: relative;
+                left: 35px;
+            }
+            .search-bar{
+                padding: 15px 15px 15px 45px;
+                border-radius: 40px;
+                width: 250px;
+
+            }
+            #suggestion-box{
+                border: 1px solid black;
+                width: 45%;
+                margin-left: 29%;
+                
+            }
+            #suggestion-item{
+                border: 1px solid black;
+                padding:10px ;
+                border-radius: 10px;
+
+
+            }
     </style>
 </head>
 <body>
-    
     <div>
-        <span class = "left-bar">&#9881; </span>
-        <span class = "right-bar">&#8226; online | &#x23F0; - ms</span>
+        <span class="left-bar">&#9881</span>
+        <span class="right-bar"> &#x2022; online | &#x1F552; -ms</span>
     </div>
-
-    <div class = "search-section">
-        <h1><span class = "logo"> Lost Frequency </span></h1>
-        <p><span class = "logo-line"> One million phrases. Four algorithms. Prefix Based Auto Suggest</span></p>
-        <span class = "lens">&#128269; </span>
-        <input class = "search-box" placeholder="Start typing to search" > 
-        <br><br>
-        <div id = "suggestion-box">
+    <div class="search-section">
+        <h1><span class="logo-first">BEING </span>INFINITY</h1>
+        <p><span class="tagline"> million phases. Four Algorithms. Prefix Based Auto Suggest.</span></p>
+       <span><span class="lens">&#128269;</span>
+      <input class="search-bar" id="search-bar" placeholder="Start typing to Search">
+       <div id="suggestionBox">
+        
+       </div>
     </div>
-</div>
-<script>
+    <script>
       var searchBar=document.getElementById("search-bar");
        var suggestionBox=document.getElementById("suggestionBox");
       
@@ -82,14 +92,12 @@
             var htmlResults="";
             for(var i=0;i<resultsArray.length;i++)
          {
-            htmlResults="<div id='suggestion-item'>" + resultsArray[i].text + "</div>"
+            htmlResults +="<div id='suggestion-item'>" + resultsArray[i].text + "</div>"
          }
             suggestionBox.innerHTML = htmlResults;
       })
       }
       })
     </script>
-
-
 </body>
 </html>
